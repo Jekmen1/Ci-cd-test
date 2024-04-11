@@ -1,5 +1,5 @@
-name : Django CI
 
+name: Django CI
 
 on:
   push:
@@ -7,17 +7,16 @@ on:
   pull_request:
     branches: [main]
 
-
 jobs:
   test:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
-      - name: Set Up Python 3.11.2
+      - name: Set Up Python 3.9
         uses: actions/setup-python@v2
-        with :
-          python-version: 3.11.2
+        with:
+          python-version: 3.9
 
       - name: Install Dependencies
         run: |
@@ -27,7 +26,5 @@ jobs:
       - name: Run migration
         run: python manage.py migrate
 
-
       - name: Run Tests
         run: python manage.py test
-
