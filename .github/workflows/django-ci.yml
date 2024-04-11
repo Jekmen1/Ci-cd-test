@@ -29,5 +29,5 @@ jobs:
 
 
       - name: Run Tests
-        run: python manage.py tests
+        run: python manage.py test
 
